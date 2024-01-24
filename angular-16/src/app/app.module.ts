@@ -8,6 +8,7 @@ import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       metaReducers
     }),
     EffectsModule.forRoot([AppEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

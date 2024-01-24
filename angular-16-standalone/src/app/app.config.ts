@@ -7,7 +7,8 @@ import { reducers, metaReducers } from './reducers';
 import { provideEffects } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideStore(reducers, { metaReducers }), provideEffects(AppEffects), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
+  providers: [provideRouter(routes), provideStore(reducers, { metaReducers }), provideEffects(AppEffects), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideNoopAnimations()]
 };
